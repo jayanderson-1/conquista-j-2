@@ -60,12 +60,14 @@ export default function LandingPage() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#0057D9] transition-all group-hover:w-full"></span>
             </a>
             <a 
-              href="#contato"
+              href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#25D366] text-white px-5 py-2.5 rounded-full font-medium inline-flex items-center gap-2 hover:bg-[#20bd5a] transition-all animate-pulse-slow shadow-lg shadow-[#25D366]/30"
               style={{ animation: 'pulse 2s infinite' }}
             >
               <MessageCircle className="w-5 h-5" />
-              Fale no WhatsApp
+              Fale no WhatsApp (+55 11 96570-7049)
             </a>
           </nav>
 
@@ -108,8 +110,9 @@ export default function LandingPage() {
                 <a href="#sobre" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b pb-2">Sobre nós</a>
                 <a href="#contato" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b pb-2">Contato</a>
                 <a 
-                  href="#contato" 
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#25D366] text-white px-5 py-3 rounded-xl font-medium inline-flex items-center justify-center gap-2 mt-4"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -425,7 +428,9 @@ export default function LandingPage() {
 
       {/* FLOATING WHATSAPP */}
       <motion.a
-        href="#contato"
+        href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 3, type: 'spring' }}
@@ -640,8 +645,13 @@ export default function LandingPage() {
                         <hr className="flex-1 border-slate-300" />
                      </div>
                      
-                     <a href="#contato" onClick={() => setActiveModalProperty(null)} className="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold mt-8 hover:bg-[#20bd5a] transition-all flex justify-center items-center gap-2 shadow-lg shadow-[#25D366]/20">
-                        <MessageCircle className="w-6 h-6" /> Falar com Especialista agora
+                     <a 
+                        href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20saber%20mais%20informa%C3%A7%C3%B5es"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold mt-8 hover:bg-[#20bd5a] transition-all flex justify-center items-center gap-2 shadow-lg shadow-[#25D366]/20"
+                     >
+                        <MessageCircle className="w-6 h-6" /> Falar com Especialista agora (+55 11 96570-7049)
                      </a>
                      <p className="text-[9px] text-center text-slate-400 mt-6 uppercase font-bold tracking-widest leading-relaxed">
                         Não enviamos spam. Seus dados estão 100% protegidos.

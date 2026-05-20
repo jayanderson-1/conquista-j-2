@@ -1,0 +1,6 @@
+{
+  "name": "Conquista Já - Imobiliária",
+  "description": "Site imobiliário de alta conversão para a equipe Conquista Já.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

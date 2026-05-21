@@ -59,16 +59,6 @@ export default function LandingPage() {
               Contato
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#0057D9] transition-all group-hover:w-full"></span>
             </a>
-            <a 
-              href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-5 py-2.5 rounded-full font-medium inline-flex items-center gap-2 hover:bg-[#20bd5a] transition-all animate-pulse-slow shadow-lg shadow-[#25D366]/30"
-              style={{ animation: 'pulse 2s infinite' }}
-            >
-              <MessageCircle className="w-5 h-5" />
-              Fale no WhatsApp (+55 11 96570-7049)
-            </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -109,15 +99,6 @@ export default function LandingPage() {
                 <a href="#imoveis" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b pb-2">Imóveis</a>
                 <a href="#sobre" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b pb-2">Sobre nós</a>
                 <a href="#contato" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b pb-2">Contato</a>
-                <a 
-                  href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#25D366] text-white px-5 py-3 rounded-xl font-medium inline-flex items-center justify-center gap-2 mt-4"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  WhatsApp
-                </a>
               </div>
             </motion.div>
           </>
@@ -181,19 +162,6 @@ export default function LandingPage() {
                   Buscar
                 </a>
               </div>
-
-              {/* Hero Badges */}
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="flex items-center gap-2 text-white/90 text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <CheckCircle className="w-4 h-4 text-[#25D366]" /> Atendimento em 2h
-                </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <Home className="w-4 h-4 text-[#C9A227]" /> +500 imóveis
-                </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <span className="text-[#C9A227] text-lg leading-none">⭐</span> 4.9/5 no Google
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
@@ -201,11 +169,42 @@ export default function LandingPage() {
         {/* SOCIAL PROOF / COUNTERS */}
         <section className="bg-[#003087] py-16 text-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/20">
               <CounterItem value={1247} label="Famílias Atendidas" suffix="+" />
-              <CounterItem value={500} label="Imóveis Disponíveis" suffix="+" />
               <CounterItem value={98} label="De Satisfação" suffix="%" />
-              <CounterItem value={12} label="Anos de Experiência" />
+              <CounterItem value={60} label="Anos de História" prefix="Mais de " suffix="+" />
+            </div>
+          </div>
+        </section>
+
+        {/* HIGHLIGHT MINHA CASA MINHA VIDA */}
+        <section className="py-12 bg-white border-y border-slate-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <div className="bg-gradient-to-br from-[#003087] to-[#001a52] rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden text-white flex flex-col md:flex-row items-center gap-8">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#0057D9]/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-[#C9A227]/10 rounded-full blur-2xl" />
+              
+              <div className="flex-1 text-center md:text-left z-10">
+                <span className="bg-[#C9A227] text-white text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-4 shadow-sm animate-pulse">
+                  Grande Oportunidade ✨
+                </span>
+                <h3 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+                  Apartamentos dentro das condições <span className="text-[#C9A227]">Minha Casa Minha Vida</span>, e entrada a partir de <span className="underline decoration-[#C9A227] decoration-2">800 reais</span>!
+                </h3>
+                <p className="text-slate-200 text-base md:text-lg font-light leading-relaxed">
+                  Você consegue realizar o sonho da casa própria com a entrada a partir de 800 reais de entrada.
+                </p>
+              </div>
+              
+              <div className="flex-shrink-0 z-10">
+                <a 
+                  href="#contato" 
+                  className="bg-[#C9A227] hover:bg-[#b08b1a] text-[#001a52] font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-2 cursor-pointer text-base uppercase tracking-wider"
+                >
+                  <span>Aproveitar Agora</span>
+                  <span className="text-lg">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -320,6 +319,7 @@ export default function LandingPage() {
             </div>
             
             <TestimonialCarousel />
+            <InstagramReels />
           </div>
         </section>
 
@@ -378,49 +378,24 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="bg-[#001a52] text-white py-16 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <div className="flex items-center gap-2 text-white mb-6">
-                <Home className="w-8 h-8" />
-                <span className="font-playfair font-bold text-2xl">Conquista Já</span>
-              </div>
-              <p className="text-blue-200">
-                Sua parceira de confiança para realizar o sonho do imóvel próprio com segurança e agilidade.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-6 text-[#C9A227]">Atalhos</h4>
-              <ul className="space-y-3">
-                <li><a href="#imoveis" className="text-blue-200 hover:text-white transition-colors">Imóveis em Destaque</a></li>
-                <li><a href="#sobre" className="text-blue-200 hover:text-white transition-colors">Sobre a Empresa</a></li>
-                <li><a href="#contato" className="text-blue-200 hover:text-white transition-colors">Fale Conosco</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-6 text-[#C9A227]">Contato</h4>
-              <ul className="space-y-3 mb-6 relative">
-                 <li className="flex items-center gap-3 text-blue-200">
-                   <MessageCircle className="w-5 h-5" /> (11) 99999-9999
-                 </li>
-                 <li className="flex items-center gap-3 text-blue-200">
-                   <Building className="w-5 h-5" /> Av. Paulista, 1000 - São Paulo, SP
-                 </li>
-              </ul>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A227] transition-colors text-white">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A227] transition-colors text-white">
-                  <Facebook className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <div className="flex items-center gap-2 text-white mb-6 justify-center">
+            <Home className="w-8 h-8" />
+            <span className="font-playfair font-bold text-2xl">Conquista Já</span>
+          </div>
+          <p className="text-blue-200 max-w-md mx-auto mb-8">
+            Sua parceira de confiança para realizar o sonho do imóvel próprio com segurança e agilidade.
+          </p>
+          <div className="flex gap-4 mb-8 justify-center">
+            <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A227] transition-colors text-white">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A227] transition-colors text-white">
+              <Facebook className="w-5 h-5" />
+            </a>
           </div>
           
-          <div className="border-t border-white/10 mt-12 pt-8 text-center text-blue-300 text-sm">
+          <div className="border-t border-white/10 w-full pt-8 text-center text-blue-300 text-sm">
             &copy; {new Date().getFullYear()} Conquista Já Imobiliária. Todos os direitos reservados.
           </div>
         </div>
@@ -527,30 +502,41 @@ export default function LandingPage() {
                             <h4 className="font-bold text-[#001a52] text-sm uppercase tracking-widest text-[#C9A227]">Depoimento de Cliente</h4>
                          </div>
                          <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm max-w-[340px] mx-auto md:mx-0">
-                            {/* Instagram Header */}
-                            <div className="p-3 flex items-center justify-between border-b border-slate-100">
+                            <div className="p-3 flex items-center justify-between border-b border-slate-100 hidden">
                                <div className="flex items-center gap-2">
                                   <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden relative border border-slate-200">
                                      <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" fill className="object-cover" alt="User Avatar" unoptimized />
                                   </div>
                                   <div className="leading-tight">
                                      <div className="text-xs font-bold text-slate-800 flex items-center gap-1">gerentebaracela <CheckCircle className="w-3 h-3 text-blue-500 fill-current" /></div>
-                                     <div className="text-[10px] text-slate-500">Kellen Byanca, Todah...</div>
+                                     <div className="text-[10px] text-slate-500">Depoimento de Cliente</div>
                                   </div>
                                </div>
-                               <button type="button" className="bg-[#0095f6] text-white text-[10px] font-bold px-4 py-1.5 rounded-md hover:bg-[#1877F2] transition-colors">Ver perfil</button>
+                               <a href="https://www.instagram.com/gerentebaracela/" target="_blank" rel="noopener noreferrer" className="bg-[#0095f6] text-white text-[10px] font-bold px-4 py-1.5 rounded-md hover:bg-[#1877F2] transition-colors inline-block text-center">Ver perfil</a>
                             </div>
-                            
+
                             {/* Insta Image/Video */}
-                            <div className="relative aspect-[4/5] bg-black group cursor-pointer flex items-center justify-center">
-                               <Image src={activeModalProperty.images?.[0] || activeModalProperty.image} fill className="object-cover opacity-90 transition-transform group-hover:scale-105 duration-500" alt="Insta Post" unoptimized />
-                               <div className="absolute inset-0 bg-black/20" />
-                               <div className="relative z-10 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform border border-white/40">
-                                  <Play className="w-8 h-8 text-white fill-current ml-1" />
-                               </div>
-                               <div className="absolute bottom-4 left-0 right-0 text-center text-white text-[11px] font-bold drop-shadow-md tracking-wider">
-                                  Assistir no Instagram
-                               </div>
+                            <div className="relative aspect-[4/5] bg-black group flex items-center justify-center overflow-hidden">
+                               {activeModalProperty.testimonialReelId ? (
+                                  <iframe
+                                     src={`https://www.instagram.com/reel/${activeModalProperty.testimonialReelId}/embed`}
+                                     className="absolute inset-0 w-full h-full border-0"
+                                     allowFullScreen
+                                     scrolling="no"
+                                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                  />
+                               ) : (
+                                  <div className="absolute inset-0 flex items-center justify-center bg-black">
+                                     <Image src={activeModalProperty.images?.[0] || activeModalProperty.image} fill className="object-cover opacity-90 transition-transform group-hover:scale-105 duration-500" alt="Insta Post" unoptimized />
+                                     <div className="absolute inset-0 bg-black/20" />
+                                     <div className="relative z-10 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform border border-white/40">
+                                        <Play className="w-8 h-8 text-white fill-current ml-1" />
+                                     </div>
+                                     <div className="absolute bottom-4 left-0 right-0 text-center text-white text-[11px] font-bold drop-shadow-md tracking-wider">
+                                        Assistir no Instagram
+                                     </div>
+                                  </div>
+                               )}
                             </div>
                             
                             {/* Insta Footer */}
@@ -791,7 +777,7 @@ function ModalLeadForm({ propertyName, onSuccess }: { propertyName?: string, onS
   );
 }
 
-function CounterItem({ value, label, suffix = '' }: { value: number, label: string, suffix?: string }) {
+function CounterItem({ value, label, suffix = '', prefix = '' }: { value: number, label: string, suffix?: string, prefix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -822,7 +808,7 @@ function CounterItem({ value, label, suffix = '' }: { value: number, label: stri
   return (
     <div ref={ref} className="text-center px-4 py-8">
       <div className="font-playfair text-4xl md:text-5xl font-bold text-[#C9A227] mb-2">
-        {count}{suffix}
+        {prefix}{count}{suffix}
       </div>
       <div className="text-sm md:text-base font-medium tracking-wide uppercase text-blue-100">
         {label}
@@ -994,6 +980,78 @@ function TestimonialCarousel() {
   );
 }
 
+function InstagramReels() {
+  const [showAll, setShowAll] = useState(false);
+  
+  const reels = [
+    { id: "DYnI9Y1SasK", title: "Sonho Realizado no Novo Mundo Carrão" },
+    { id: "DYhWvBnS0Si", title: "Sucesso de Atendimento · Família Feliz" },
+    { id: "DYhWLMiSWuG", title: "Entrega de Chaves Emocionante" },
+    { id: "DYV0Ok6Srzv", title: "Mais uma Jornada de Conquista Finalizada" },
+    { id: "DXu9fX7ifqd", title: "Assinatura de Contrato e Comemoração" },
+    { id: "DXzvPZwysEY", title: "Chaves na Mão para nova Família" },
+    { id: "DXu9Grqif6j", title: "Momento de Conquista e Gratidão" },
+    { id: "DXkTiUnCaeV", title: "Atendimento Diferenciado e Transparente" },
+    { id: "DXhnbLlCYyn", title: "Parceria de Sucesso com Nossos Clientes" },
+  ];
+
+  const visibleReels = showAll ? reels : reels.slice(0, 3);
+
+  return (
+    <div className="mt-20 border-t border-blue-100 pt-16">
+      <div className="text-center mb-12">
+        <span className="text-[#0057D9] text-sm uppercase tracking-wider font-semibold bg-blue-50 px-4 py-1.5 rounded-full inline-block mb-3">
+          Prova Social
+        </span>
+        <h3 className="font-playfair text-2.5xl md:text-3xl text-[#001a52] font-semibold mb-3">
+          Depoimentos de Clientes & Sucessos Recentes
+        </h3>
+        <p className="text-slate-600 max-w-2xl mx-auto">
+          Veja em tempo real o depoimento de famílias que conquistaram o imóvel próprio com o Gerente Baracela e nossa equipe.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {visibleReels.map((reel) => (
+          <div key={reel.id} className="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 p-4 hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between">
+            <div className="relative aspect-[9/16] w-full bg-slate-50 rounded-2.5xl overflow-hidden">
+              <iframe
+                src={`https://www.instagram.com/reel/${reel.id}/embed`}
+                className="absolute inset-0 w-full h-full border-0 rounded-2.5xl"
+                allowFullScreen
+                scrolling="no"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <p className="font-bold text-[#001a52] text-sm line-clamp-1">{reel.title}</p>
+              <a
+                href={`https://www.instagram.com/reel/${reel.id}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[#0057D9] font-medium hover:underline mt-1.5 inline-flex items-center gap-1"
+              >
+                <span>Assistir no Instagram</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-white text-[#003087] border-2 border-[#003087] hover:bg-[#003087] hover:text-white px-8 py-3.5 rounded-xl font-semibold transition-all shadow-md active:scale-95 inline-flex items-center gap-2 cursor-pointer"
+        >
+          <span>{showAll ? "Ver Menos Vídeos" : "Ver Mais Depoimentos"}</span>
+          <span>{showAll ? "↑" : "↓"}</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function LeadForm({ origin, onSuccess }: { origin: string, onSuccess?: () => void }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{type: 'success'|'error', msg: string} | null>(null);
@@ -1103,13 +1161,28 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/69c6bd22e4632.jpeg',
     images: [
-      'https://cury.net/storage/images/products/gallery/69c6b8f6862ee.jpeg',
       'https://cury.net/storage/images_webp/products/gallery/69c6b90992e1f.jpeg.webp',
-      'https://cury.net/storage/images/products/gallery/69c6b912cc6f5.jpeg'
+      'https://cury.net/storage/images/products/gallery/69c6b912cc6f5.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9343c503.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b940dbec7.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b94c88745.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b95604b57.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9633e1e8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b96d282ba.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9845ae8b.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9a481c1e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9b0d010e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9c1745c3.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9cbde21a.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9f69b73d.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6ba1673bd8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6bd22e4632.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b8f6862ee.jpeg'
     ],
     tag: 'Lançamento',
     urgent: true,
     title: 'Novo Mundo Carrão II',
+    testimonialReelId: 'DYnI9Y1SasK',
     location: 'Vila Carrão, Zona Leste - SP',
     region: 'Zona Leste',
     beds: '1 e 2',
@@ -1128,16 +1201,29 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/69c6b90992e1f.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/69c6b90992e1f.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/69c6b912cc6f5.jpeg',
       'https://cury.net/storage/images/products/gallery/69c6b9343c503.jpeg',
       'https://cury.net/storage/images/products/gallery/69c6b940dbec7.jpeg',
       'https://cury.net/storage/images/products/gallery/69c6b94c88745.jpeg',
-      'https://cury.net/storage/images/products/gallery/69c6b95604b57.jpeg'
+      'https://cury.net/storage/images/products/gallery/69c6b95604b57.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9633e1e8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b96d282ba.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9845ae8b.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9a481c1e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9b0d010e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9c1745c3.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9cbde21a.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b9f69b73d.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6ba1673bd8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6bd22e4632.jpeg',
+      'https://cury.net/storage/images/products/gallery/69c6b8f6862ee.jpeg'
     ],
     video: 'https://www.youtube.com/embed/Y5B4bAsmAu8?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Novo Mundo Carrão',
+    testimonialReelId: 'DYhWvBnS0Si',
     location: 'Vila Carrão, Zona Leste - SP',
     region: 'Zona Leste',
     beds: '1 e 2',
@@ -1156,16 +1242,28 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/69aec6a1e1c4b.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/69aec6a1e1c4b.jpeg',
       'https://cury.net/storage/images/products/gallery/69aec76cb0ca2.jpeg',
       'https://cury.net/storage/images/products/gallery/69aec77556d58.jpeg',
       'https://cury.net/storage/images/products/gallery/69aec77f0d224.jpeg',
       'https://cury.net/storage/images/products/gallery/69aec78fba2af.jpeg',
-      'https://cury.net/storage/images/products/gallery/69aec7a7c8a28.jpeg'
+      'https://cury.net/storage/images/products/gallery/69aec7a7c8a28.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7b58f4bc.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7c2df1ec.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7cd3e57b.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7d91730e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7e3b75eb.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec7f8eb99d.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec80e6c0f7.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec81a3a8d6.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec826516b0.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aec8314d2f1.jpeg'
     ],
     video: 'https://www.youtube.com/embed/sBztQBvFZE0?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Lyne Água Branca',
+    testimonialReelId: 'DYV0Ok6Srzv',
     location: 'Água Branca - Zona Norte',
     region: 'Zona Norte',
     beds: '2',
@@ -1184,16 +1282,25 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/6986120c801ee.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/6986120c801ee.jpeg',
       'https://cury.net/storage/images/products/gallery/69861035186b8.jpeg',
       'https://cury.net/storage/images/products/gallery/6986104f6c378.jpeg',
       'https://cury.net/storage/images/products/gallery/6986107366a6d.jpeg',
       'https://cury.net/storage/images/products/gallery/69861096095d2.jpeg',
-      'https://cury.net/storage/images/products/gallery/698610a11e9b8.jpeg'
+      'https://cury.net/storage/images/products/gallery/698610a11e9b8.jpeg',
+      'https://cury.net/storage/images/products/gallery/698610ab885fe.jpeg',
+      'https://cury.net/storage/images/products/gallery/698610bb82164.jpeg',
+      'https://cury.net/storage/images/products/gallery/698610cb046ef.jpeg',
+      'https://cury.net/storage/images/products/gallery/698610f036175.jpeg',
+      'https://cury.net/storage/images/products/gallery/69861107441aa.jpeg',
+      'https://cury.net/storage/images/products/gallery/69861124a1337.jpeg',
+      'https://cury.net/storage/images/products/gallery/6986113390e5c.jpeg'
     ],
     video: 'https://www.youtube.com/embed/ofynJG7eQX0?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: false,
     title: 'Marco Freguesia',
+    testimonialReelId: 'DYhWLMiSWuG',
     location: 'Freguesia do Ó - Zona Norte',
     region: 'Zona Norte',
     beds: '2',
@@ -1212,16 +1319,23 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/69f215824cbb7.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/69f215824cbb7.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/69f2159a91c04.jpeg',
       'https://cury.net/storage/images/products/gallery/69f215db00274.jpeg',
       'https://cury.net/storage/images/products/gallery/69f21614005ae.jpeg',
       'https://cury.net/storage/images/products/gallery/69f21624d8c77.jpeg',
-      'https://cury.net/storage/images/products/gallery/69f2163a5b075.jpeg'
+      'https://cury.net/storage/images/products/gallery/69f2163a5b075.jpeg',
+      'https://cury.net/storage/images/products/gallery/69f2166556685.jpeg',
+      'https://cury.net/storage/images/products/gallery/69f216c88105e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69f216dd81fb5.jpeg',
+      'https://cury.net/storage/images/products/gallery/69f2170d0d741.jpeg',
+      'https://cury.net/storage/images/products/gallery/69f2171cb0f6c.jpeg'
     ],
     video: 'https://www.youtube.com/embed/SDMVoyWwt_s?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Nova Leopoldina - Condomínio Art',
+    testimonialReelId: 'DXu9fX7ifqd',
     location: 'Vila Leopoldina - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1240,16 +1354,27 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/69aed8035717d.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/69aed8035717d.jpeg',
       'https://cury.net/storage/images/products/gallery/69aed80c5000f.jpeg',
       'https://cury.net/storage/images/products/gallery/69aed8156696c.jpeg',
       'https://cury.net/storage/images/products/gallery/69aed821b5a80.jpeg',
       'https://cury.net/storage/images/products/gallery/69aed8374b4f1.jpeg',
-      'https://cury.net/storage/images/products/gallery/69aed843b64e9.jpeg'
+      'https://cury.net/storage/images/products/gallery/69aed843b64e9.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed85997119.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed86684271.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed87456d1c.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed882668b7.jpeg',
+      'https://cury.net/storage/images_webp/products/gallery/69aed8954df1e.jpeg.webp',
+      'https://cury.net/storage/images/products/gallery/69aed8a187e5c.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed8ad315f8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed8d9f272f.jpeg',
+      'https://cury.net/storage/images/products/gallery/69aed8f82ac70.jpeg'
     ],
     video: 'https://www.youtube.com/embed/Vs8aSkXN070?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Cidade Villa Lobos - Condomínio Tenor',
+    testimonialReelId: 'DXzvPZwysEY',
     location: 'Jaguaré - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1268,16 +1393,34 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/69989d393741e.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/69989d393741e.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/69989d54817e0.jpeg',
       'https://cury.net/storage/images/products/gallery/69989d6c5c2d9.jpeg',
       'https://cury.net/storage/images/products/gallery/69989d82dea25.jpeg',
       'https://cury.net/storage/images/products/gallery/69989d95f0f38.jpeg',
-      'https://cury.net/storage/images/products/gallery/69989db94e8b0.jpeg'
+      'https://cury.net/storage/images/products/gallery/69989db94e8b0.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989dd575943.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989e175a962.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989e30e7fd9.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989e92d2ace.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989f2fb6c34.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989f4d5e4e4.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989f5951b7a.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989f6db5da2.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989f857ea02.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989fd45ee26.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989fe494b3e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69989ff1049ac.jpeg',
+      'https://cury.net/storage/images/products/gallery/6998a00602c71.jpeg',
+      'https://cury.net/storage/images/products/gallery/6998a02ec25c0.jpeg',
+      'https://cury.net/storage/images/products/gallery/6998a03c76ee5.jpeg',
+      'https://cury.net/storage/images/products/gallery/6998a04e1095e.jpeg'
     ],
     video: 'https://www.youtube.com/embed/s2OXWt7FyZ8?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Barra Funda 900',
+    testimonialReelId: 'DXu9Grqif6j',
     location: 'Barra Funda - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1296,15 +1439,26 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/695d31db3d6bb.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/695d31db3d6bb.jpeg',
       'https://cury.net/storage/images/products/gallery/695d323e7fa5c.jpeg',
       'https://cury.net/storage/images/products/gallery/695d32505f724.jpeg',
       'https://cury.net/storage/images/products/gallery/695d3262a277a.jpeg',
-      'https://cury.net/storage/images/products/gallery/695d32737af12.jpeg'
+      'https://cury.net/storage/images/products/gallery/695d32737af12.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d328467c1f.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d3296f399c.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d32a5a1a75.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d32baa9378.jpeg',
+      'https://cury.net/storage/images_webp/products/gallery/695d32ce08146.jpeg.webp',
+      'https://cury.net/storage/images/products/gallery/695d32ddbf08e.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d32ef736e7.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d3301ef90b.jpeg',
+      'https://cury.net/storage/images/products/gallery/695d3315f0fca.jpeg'
     ],
     video: 'https://www.youtube.com/embed/iDAgqDKe9mk?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Mérito Lapa',
+    testimonialReelId: 'DXkTiUnCaeV',
     location: 'Lapa - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1323,15 +1477,27 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/695eb0cc90a00.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/695eb0cc90a00.jpeg',
       'https://cury.net/storage/images_webp/products/gallery/695eb0a8473d7.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/695eb0b950c1a.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb0cc90a00.jpeg',
       'https://cury.net/storage/images/products/gallery/695eb0ddbc03d.jpeg',
-      'https://cury.net/storage/images/products/gallery/695eb0ef678d6.jpeg'
+      'https://cury.net/storage/images/products/gallery/695eb0ef678d6.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb17ade967.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1882f5fe.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb19c5edd1.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1ad50058.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1c2aa4b7.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1d53189f.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1e52a6a2.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb1fb06de4.jpeg',
+      'https://cury.net/storage/images/products/gallery/695eb20a7700c.jpeg'
     ],
     video: 'https://www.youtube.com/embed/5BOBgmXwY8g?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Supreme Vila Romana',
+    testimonialReelId: 'DXhnbLlCYyn',
     location: 'Lapa - Zona Oeste',
     region: 'Zona Oeste',
     beds: '1 e 2',
@@ -1350,15 +1516,21 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/690906a60521b.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/690906a60521b.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/690900b89f8f4.jpeg',
       'https://cury.net/storage/images/products/gallery/690900d71cea0.jpeg',
       'https://cury.net/storage/images/products/gallery/690900f2c57cf.jpeg',
-      'https://cury.net/storage/images/products/gallery/6909010e51779.jpeg'
+      'https://cury.net/storage/images/products/gallery/6909010e51779.jpeg',
+      'https://cury.net/storage/images/products/gallery/6909012a73bb2.jpeg',
+      'https://cury.net/storage/images/products/gallery/6909015d8a98f.jpeg',
+      'https://cury.net/storage/images/products/gallery/690901a64d5ba.jpeg',
+      'https://cury.net/storage/images/products/gallery/690901d113f4d.jpeg'
     ],
     video: 'https://www.youtube.com/embed/G_timsr_yIs?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Atmosfera Jaguaré',
+    testimonialReelId: 'DYhWvBnS0Si',
     location: 'Jaguaré - Zona Oeste',
     region: 'Zona Oeste',
     beds: '1 e 2',
@@ -1377,15 +1549,25 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/68e400e154d72.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/68e400e154d72.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/68e4010b74caa.jpeg',
       'https://cury.net/storage/images/products/gallery/68e4012403aa2.jpeg',
       'https://cury.net/storage/images/products/gallery/68e4013903aca.jpeg',
-      'https://cury.net/storage/images/products/gallery/68e4014db35d2.jpeg'
+      'https://cury.net/storage/images/products/gallery/68e4014db35d2.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e4016e8d587.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e4018a83957.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e4019e1129c.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e401b4daa4b.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e401c8bf158.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e401ec1c40d.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e4022403409.jpeg',
+      'https://cury.net/storage/images/products/gallery/68e40240aca31.jpeg'
     ],
     video: 'https://www.youtube.com/embed/uOyO7keNZvM?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Barra Funda 930',
+    testimonialReelId: 'DYhWLMiSWuG',
     location: 'Barra Funda - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1404,14 +1586,21 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/685b13da62cca.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/685b13da62cca.jpeg',
       'https://cury.net/storage/images/products/gallery/685b13eaca89c.jpeg',
       'https://cury.net/storage/images/products/gallery/685b14107f1cc.jpeg',
       'https://cury.net/storage/images_webp/products/gallery/685b13701c621.jpeg.webp',
-      'https://cury.net/storage/images/products/gallery/685b137e3fb27.jpeg'
+      'https://cury.net/storage/images/products/gallery/685b137e3fb27.jpeg',
+      'https://cury.net/storage/images/products/gallery/685b138636b98.jpeg',
+      'https://cury.net/storage/images/products/gallery/685b139660465.jpeg',
+      'https://cury.net/storage/images/products/gallery/685b13aaa44b4.jpeg',
+      'https://cury.net/storage/images/products/gallery/685b13b4dbf17.jpeg',
+      'https://cury.net/storage/images/products/gallery/685b13d1b796b.jpeg'
     ],
     tag: 'Lançamento',
     urgent: true,
     title: 'Singular Butantã',
+    testimonialReelId: 'DYV0Ok6Srzv',
     location: 'Butantã - Zona Oeste',
     region: 'Zona Oeste',
     beds: '2',
@@ -1430,15 +1619,30 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/69eb902467863.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/69eb902467863.jpeg',
       'https://cury.net/storage/images/products/gallery/69eba4d1e0601.jpeg',
       'https://cury.net/storage/images/products/gallery/69eba4e252153.jpeg',
       'https://cury.net/storage/images/products/gallery/69eba4fa38a83.jpeg',
-      'https://cury.net/storage/images/products/gallery/69eba50a3f6a8.jpeg'
+      'https://cury.net/storage/images/products/gallery/69eba50a3f6a8.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba5189051e.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba53ebb652.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba561238bf.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba577726dc.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba591d8323.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba5b1a2aeb.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba5c17ba13.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba5dc1f0c5.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba610b1769.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba64adff20.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba68514dfc.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba6aa0c407.jpeg',
+      'https://cury.net/storage/images/products/gallery/69eba724d8c88.jpeg'
     ],
     video: 'https://www.youtube.com/embed/YF0slKrpX1c?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Parque das Nações - Condomínio Granja Julieta',
+    testimonialReelId: 'DXu9fX7ifqd',
     location: 'Chácara Santo Antônio - Zona Sul',
     region: 'Zona Sul',
     beds: '1 e 2',
@@ -1457,15 +1661,30 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images_webp/products/gallery/698c934a510d9.jpeg.webp',
     images: [
+      'https://cury.net/storage/images_webp/products/gallery/698c934a510d9.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/698c93c4b2967.jpeg',
       'https://cury.net/storage/images_webp/products/gallery/69a1e193aaf5d.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/698c9406d57a8.jpeg',
-      'https://cury.net/storage/images/products/gallery/698c9414867fe.jpeg'
+      'https://cury.net/storage/images/products/gallery/698c9414867fe.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c94258eebb.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c942fc27da.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c9439ba13e.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c9442ba157.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c9450c1af5.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c945c47050.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c9465865ba.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c946f25265.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c9479375f8.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c948496925.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c948faca30.jpeg',
+      'https://cury.net/storage/images/products/gallery/698c949aa48f9.jpeg',
+      'https://cury.net/storage/images/products/gallery/69a1e1ab55b2a.jpeg'
     ],
     video: 'https://www.youtube.com/embed/FFSHy1sM7AE?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Cidade Parque Guarapiranga',
+    testimonialReelId: 'DXzvPZwysEY',
     location: 'Socorro - Zona Sul',
     region: 'Zona Sul',
     beds: '1 e 2',
@@ -1484,15 +1703,29 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/698f44c830f7c.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/698f44c830f7c.jpeg',
       'https://cury.net/storage/images/products/gallery/698f44d292dfc.jpeg',
       'https://cury.net/storage/images/products/gallery/698f44dd24b27.jpeg',
       'https://cury.net/storage/images/products/gallery/698f44f01afab.jpeg',
-      'https://cury.net/storage/images/products/gallery/698f44f99bd51.jpeg'
+      'https://cury.net/storage/images/products/gallery/698f44f99bd51.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f453020ab7.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f453c74694.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f45467a3e0.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f4551dc4b2.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f456105638.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f456b33c10.jpeg',
+      'https://cury.net/storage/images_webp/products/gallery/698f448fb630c.jpeg.webp',
+      'https://cury.net/storage/images/products/gallery/698f449a288a0.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f44a2a31ba.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f44adacae1.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f44b6b951c.jpeg',
+      'https://cury.net/storage/images/products/gallery/698f44bedff43.jpeg'
     ],
     video: 'https://www.youtube.com/embed/eb_7Lpar23Y?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Parque das Nações - Condomínio Laguna',
+    testimonialReelId: 'DXu9Grqif6j',
     location: 'Chácara Santo Antônio - Zona Sul',
     region: 'Zona Sul',
     beds: '1 e 2',
@@ -1511,15 +1744,26 @@ const PROPERTIES = [
   {
     image: 'https://cury.net/storage/images/products/gallery/6907fac78163d.jpeg',
     images: [
+      'https://cury.net/storage/images/products/gallery/6907fac78163d.jpeg',
       'https://cury.net/storage/images/products/gallery/6907fad5e28e8.jpeg',
       'https://cury.net/storage/images_webp/products/gallery/6907f98d9cbba.jpeg.webp',
       'https://cury.net/storage/images/products/gallery/6907f9d799123.jpeg',
-      'https://cury.net/storage/images/products/gallery/6907f9e99d86a.jpeg'
+      'https://cury.net/storage/images/products/gallery/6907f9e99d86a.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907f9fe3eafc.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa1f79046.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa2f3adec.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa4425d44.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa54c435a.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa64e0250.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa890da6d.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907fa9ba37e4.jpeg',
+      'https://cury.net/storage/images/products/gallery/6907faae3795d.jpeg'
     ],
     video: 'https://www.youtube.com/embed/4LB8PPB2LDk?autoplay=1&mute=1&playsinline=1',
     tag: 'Lançamento',
     urgent: true,
     title: 'Praça Santo Antônio',
+    testimonialReelId: 'DXkTiUnCaeV',
     location: 'Chácara Santo Antônio - Zona Sul',
     region: 'Zona Sul',
     beds: '2',

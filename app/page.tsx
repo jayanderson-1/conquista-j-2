@@ -21,6 +21,7 @@ export default function LandingPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeModalProperty, setActiveModalProperty] = useState<any | null>(null);
   const [selectedRegion, setSelectedRegion] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   
   // Handle Scroll for Header
   useEffect(() => {
@@ -143,6 +144,8 @@ export default function LandingPage() {
               <div className="bg-white p-3 rounded-2xl flex flex-col md:flex-row gap-3 shadow-2xl max-w-4xl">
                 <input 
                   type="text" 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Cidade, bairro ou referência..." 
                   className="flex-1 bg-slate-50 px-4 py-3 rounded-xl outline-none border border-transparent focus:border-[#0057D9] transition-colors"
                 />
@@ -222,8 +225,22 @@ export default function LandingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {PROPERTIES.filter(p => !selectedRegion || p.region === selectedRegion).length > 0 ? (
-                PROPERTIES.filter(p => !selectedRegion || p.region === selectedRegion).map((prop, idx) => (
+              {PROPERTIES.filter(p => {
+                const matchesRegion = !selectedRegion || p.region === selectedRegion;
+                const matchesSearch = !searchQuery || 
+                  p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                  p.location.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                  p.region.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesRegion && matchesSearch;
+              }).length > 0 ? (
+                PROPERTIES.filter(p => {
+                  const matchesRegion = !selectedRegion || p.region === selectedRegion;
+                  const matchesSearch = !searchQuery || 
+                    p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                    p.location.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                    p.region.toLowerCase().includes(searchQuery.toLowerCase());
+                  return matchesRegion && matchesSearch;
+                }).map((prop, idx) => (
                   <PropertyCard 
                     key={idx} 
                     property={prop} 
@@ -233,13 +250,19 @@ export default function LandingPage() {
               ) : (
                 <div className="col-span-full py-12 text-center text-slate-500">
                   <Search className="w-12 h-12 mx-auto text-slate-300 mb-4" />
-                  <p>Nenhum lançamento encontrado para a região de {selectedRegion}.</p>
+                  <p>Nenhum lançamento encontrado para a região de {selectedRegion || searchQuery}.</p>
                 </div>
               )}
             </div>
 
             <div className="mt-16 text-center">
-              <button className="border-2 border-[#0057D9] text-[#0057D9] px-8 py-3 rounded-full font-medium hover:bg-[#0057D9] hover:text-white transition-all">
+              <button 
+                onClick={() => {
+                  setSelectedRegion('');
+                  setSearchQuery('');
+                }}
+                className="border-2 border-[#0057D9] text-[#0057D9] px-8 py-3 rounded-full font-medium hover:bg-[#0057D9] hover:text-white transition-all cursor-pointer"
+              >
                 Ver Todos os Imóveis
               </button>
             </div>
@@ -625,20 +648,7 @@ export default function LandingPage() {
                    <div className="max-w-2xl mx-auto">
                      <ModalLeadForm propertyName={activeModalProperty.title} onSuccess={() => setTimeout(() => setActiveModalProperty(null), 2500)} />
                      
-                     <div className="mt-10 flex items-center gap-4">
-                        <hr className="flex-1 border-slate-300" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Ou se preferir</span>
-                        <hr className="flex-1 border-slate-300" />
-                     </div>
-                     
-                     <a 
-                        href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20saber%20mais%20informa%C3%A7%C3%B5es"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold mt-8 hover:bg-[#20bd5a] transition-all flex justify-center items-center gap-2 shadow-lg shadow-[#25D366]/20"
-                     >
-                        <MessageCircle className="w-6 h-6" /> Falar com Especialista agora (+55 11 96570-7049)
-                     </a>
+
                      <p className="text-[9px] text-center text-slate-400 mt-6 uppercase font-bold tracking-widest leading-relaxed">
                         Não enviamos spam. Seus dados estão 100% protegidos.
                      </p>
@@ -663,20 +673,20 @@ function ModalGalleryCarousel({ images }: { images: string[] }) {
     <div className="relative aspect-[4/3] md:aspect-video rounded-xl overflow-hidden group bg-slate-100 border border-slate-200">
        <Image src={images[index]} fill className="object-cover" unoptimized alt="Galeria" />
        
-       <div className="absolute inset-0 flex items-center justify-between p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+       <div className="absolute inset-0 flex items-center justify-between p-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           <button 
             type="button"
             onClick={() => setIndex(i => i === 0 ? images.length - 1 : i - 1)}
-            className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md backdrop-blur-sm"
+            className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-800 flex items-center justify-center shadow-md backdrop-blur-sm active:scale-95 transition-transform cursor-pointer"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
           <button 
             type="button"
             onClick={() => setIndex(i => i === images.length - 1 ? 0 : i + 1)}
-            className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md backdrop-blur-sm"
+            className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-800 flex items-center justify-center shadow-md backdrop-blur-sm active:scale-95 transition-transform cursor-pointer"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </button>
        </div>
        
@@ -820,19 +830,19 @@ function CounterItem({ value, label, suffix = '', prefix = '' }: { value: number
 function PropertyCard({ property, onInterest }: { property: any, onInterest: () => void }) {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col border border-slate-100">
-      <div className="relative h-56 overflow-hidden">
-        <Image 
-          src={property.image} 
-          alt={property.title} 
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-           <button onClick={onInterest} className="bg-white text-[#001a52] px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all">
-             Ver detalhes
-           </button>
-        </div>
+       <div className="relative h-56 overflow-hidden cursor-pointer" onClick={onInterest}>
+         <Image 
+           src={property.image} 
+           alt={property.title} 
+           fill
+           className="object-cover transition-transform duration-700 group-hover:scale-110"
+           unoptimized
+         />
+         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <button onClick={onInterest} className="bg-white text-[#001a52] px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all cursor-pointer">
+              Ver detalhes
+            </button>
+         </div>
         <div className="absolute top-4 left-4 flex gap-2">
           <span className={`text-xs font-bold px-3 py-1 rounded-full uppercase text-white shadow-md ${
              property.tag === 'Lançamento' ? 'bg-[#003087]' : 'bg-[#C9A227]'

@@ -424,21 +424,7 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* FLOATING WHATSAPP */}
-      <motion.a
-        href="https://wa.me/5511965707049?text=Ol%C3%A1%2C%20queria%20obter%20mais%20informa%C3%A7%C3%B5es"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 3, type: 'spring' }}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 group"
-      >
-        <MessageCircle className="w-8 h-8" />
-        <span className="absolute right-full mr-4 bg-white text-slate-800 text-sm py-2 px-4 rounded-xl font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          Fale com um corretor
-        </span>
-      </motion.a>
+
 
       {/* PROPERTY MODAL */}
       <AnimatePresence>

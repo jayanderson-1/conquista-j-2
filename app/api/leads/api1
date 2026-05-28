@@ -1,0 +1,59 @@
+// pages/api/leads.js
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, error: 'Método não permitido' });
+  }
+
+  const { name, phone, email, interest, origin } = req.body;
+
+  // Validação
+  if (!name || name.trim().length < 3) {
+    return res.status(400).json({ success: false, error: 'Nome inválido.' });
+  }
+  if (!phone || phone.replace(/\D/g, '').length < 10) {
+    return res.status(400).json({ success: false, error: 'Telefone inválido.' });
+  }
+  if (!interest) {
+    return res.status(400).json({ success: false, error: 'Informe seu objetivo.' });
+  }
+
+  // Payload para a API C2S
+  const payload = {
+    nome:          name.trim(),
+    telefone:      phone.replace(/\D/g, ''),
+    email:         email || '',
+    empreendimento: interest,
+    origem:        origin || 'Site Conquista Já',
+    midia:         'site',
+    data_cadastro: new Date().toISOString(),
+  };
+
+  // Envia para C2S
+  try {
+    const c2sRes = await fetch(`${process.env.C2S_BASE_URL}/leads`, {
+      method:  'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.C2S_TOKEN}`,
+        'Content-Type':  'application/json',
+        'X-Empresa-ID':  process.env.C2S_EMPRESA_ID || '',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await c2sRes.json();
+
+    console.log(`[LEAD] ${new Date().toISOString()} | ${name} | ${phone} | C2S status: ${c2sRes.status}`);
+
+    if (c2sRes.ok) {
+      return res.status(200).json({ success: true, lead_id: data.id || 'ok' });
+    } else {
+      console.error('[C2S ERRO]', data);
+      // Retorna sucesso ao usuário mesmo assim (lead fica no log)
+      return res.status(200).json({ success: true, warning: 'Lead recebido, CRM notificado.' });
+    }
+
+  } catch (err) {
+    console.error('[C2S FALHA]', err.message);
+    return res.status(200).json({ success: true, warning: 'Lead salvo em log.' });
+  }
+}

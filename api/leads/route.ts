@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     });
 
     // Flexible extraction of environment variables with client-side override backup
-    const defaultC2sToken = '7fac93af962788393c53c7a7af41ba8a64d7d962d189a3fabf';
+    const defaultC2sToken = '2685dd395c09a924f0ebb5fc811070bf25e2cb18540b56af31';
     const c2sToken = customToken || process.env.C2S_API_TOKEN || process.env.C2S_TOKEN || process.env.TOKEN_C2S || defaultC2sToken;
     const c2sWebhookUrl = customWebhook || process.env.C2S_WEBHOOK_URL || process.env.C2S_WEBHOOK || process.env.WEBHOOK_C2S || '';
 
@@ -119,7 +119,7 @@ export async function POST(req: Request) {
 
     // Determine target delivery URL: 
     // Prioritizes a specific Custom Webhook URL, falls back to standard C2S v1 and v2 API Leads endpoints if token is set.
-    let targetUrl = c2sWebhookUrl || (c2sToken ? 'https://api.c2s.com.br/v1/leads' : null);
+    let targetUrl = c2sWebhookUrl || (c2sToken ? 'https://api.contact2sale.com/integration' ' : null);
 
     if (targetUrl && c2sToken) {
       // Append the token to the URL query string as a universal fallback, 

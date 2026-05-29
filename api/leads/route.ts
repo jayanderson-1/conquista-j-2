@@ -119,7 +119,7 @@ export async function POST(req: Request) {
 
     // Determine target delivery URL: 
     // Prioritizes a specific Custom Webhook URL, falls back to standard C2S v1 and v2 API Leads endpoints if token is set.
-    let targetUrl = c2sWebhookUrl || (c2sToken ? 'https://api.contact2sale.com/integration' ' : null);
+    let targetUrl = c2sWebhookUrl || (c2sToken ? 'https://api.contact2sale.com/integration'  : null);
 
     if (targetUrl && c2sToken) {
       // Append the token to the URL query string as a universal fallback, 

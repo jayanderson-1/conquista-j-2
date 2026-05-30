@@ -153,7 +153,7 @@ export default function Home() {
       return;
     }
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch("https://api.contact2sale.com/integration", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: formName, phone: formPhone, email: formEmail, interest: formObjective, origin: "site_conquista_ja" }),
@@ -190,7 +190,7 @@ export default function Home() {
       return;
     }
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch("https://api.contact2sale.com/integration", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: modalName, phone: modalPhone, email: modalEmail, interest: `Projeto: ${selectedProperty}`, origin: "site_conquista_ja" }),
